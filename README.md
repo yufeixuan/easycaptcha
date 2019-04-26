@@ -61,7 +61,7 @@
 ```
 
 ### 3.2.jar包下载
-[easy-captcha-1.5.1-RELEASE.jar](https://gitee.com/whvse/EasyCaptcha/releases)
+[easy-captcha-1.5.1-RELEASE.jar](自行编译)
 
 
 ---
