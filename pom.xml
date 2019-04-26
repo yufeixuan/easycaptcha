@@ -2,7 +2,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.yufeixuan</groupId>
+    <groupId>io.github.yufeixuan</groupId>
 
     <artifactId>easy-captcha</artifactId>
     <version>1.5.1-RELEASE</version>
@@ -10,7 +10,33 @@
 
     <name>EasyCaptcha</name>
     <description>Java图形验证码，支持gif验证码、中文验证码，适用于Java Web、JavaSE项目。</description>
-    <url>https://github.com/whvcse/EasyCaptcha</url>
+    <url>https://github.com/yufeixuan/easycaptcha</url>
+
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+            <comments>The Apache Software License, Version 2.0</comments>
+        </license>
+    </licenses>
+
+    <scm>
+        <url>https://github.com/yufeixuan/easycaptcha</url>
+        <connection>https://github.com/yufeixuan/easycaptcha.git</connection>
+    </scm>
+
+    <developers>
+        <developer>
+            <name>phoenix</name>
+            <id>phoenix</id>
+            <email>luoxuan5678@qq.com</email>
+            <roles>
+                <role>Developer</role>
+            </roles>
+            <timezone>+8</timezone>
+        </developer>
+    </developers>
 
     <dependencies>
         <!-- j2ee环境 -->
