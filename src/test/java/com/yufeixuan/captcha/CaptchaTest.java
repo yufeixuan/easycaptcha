@@ -13,7 +13,7 @@ import java.util.Random;
 
 /**
  * 测试类
- * Created by phoenix on 2018-04-27 上午 10:08.
+ * Created by phoenix on 2018-04-26 上午 10:08.
  */
 public class CaptchaTest {
 

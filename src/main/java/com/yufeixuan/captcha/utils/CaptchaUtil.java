@@ -15,7 +15,7 @@ import com.yufeixuan.captcha.SpecCaptcha;
  * Created by phoenix on 2019-04-26 上午 10:08.
  */
 public class CaptchaUtil {
-    private static final String SESSION_KEY = "captcha";
+    private static final String SESSION_KEY = "captcha_phoenix";
 
     /**
      * 验证验证码
