@@ -1,11 +1,11 @@
-package com.wf.captcha;
+package com.yufeixuan.captcha;
 
 import java.awt.*;
 import java.io.OutputStream;
 
 /**
  * 验证码抽象类
- * Created by 王帆 on 2018-07-27 上午 10:08.
+ * Created by phoenix on 2019-04-26 上午 10:08.
  */
 public abstract class Captcha extends Randoms {
     protected Font font = new Font("Arial", Font.BOLD, 32); // 字体Verdana

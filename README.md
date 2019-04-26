@@ -45,62 +45,38 @@
 
 
 ## 3.导入项目
-
-### 2.1.gradle方式的引入
-需要先在project的build.gradle中添加：
-```text
-allprojects {
-    repositories {
-        maven { url 'https://jitpack.io' }
-    }
-}
-```
-在项目的build.gradle中添加
-```text
-dependencies {
-    compile 'com.github.whvcse:EasyCaptcha:1.5.0'
-}
-```
-
-### 2.2.maven方式引入
+### 3.1.maven方式引入
 在你的pom.xml中添加如下代码：
 ```xml
 <project>
-    <repositories>
-        <repository>
-        <id>jitpack.io</id>
-        <url>https://jitpack.io</url>
-        </repository>
-    </repositories>
-    
     <dependencies>
        <dependency>
-          <groupId>com.github.whvcse</groupId>
-          <artifactId>EasyCaptcha</artifactId>
-          <version>1.5.0</version>
+          <groupId>com.yufeixuan</groupId>
+          <artifactId>easy-captcha</artifactId>
+          <version>1.5.1</version>
        </dependency>
     </dependencies>
 </project>
 
 ```
 
-### 2.3.jar包下载
-[EasyCaptcha-1.5.0.jar](https://gitee.com/whvse/EasyCaptcha/releases)
+### 3.2.jar包下载
+[easy-captcha-1.5.1-RELEASE.jar](https://gitee.com/whvse/EasyCaptcha/releases)
 
 
 ---
 
 
-## 3.使用方法
+## 4.使用方法
 
-### 3.1.快速使用
+### 4.1.快速使用
 1.在web.xml里面加入如下配置：
 ```xml
 <web-app>
     <!-- 图形验证码servlet -->
     <servlet>
         <servlet-name>CaptchaServlet</servlet-name>
-        <servlet-class>com.wf.captcha.servlet.CaptchaServlet</servlet-class>
+        <servlet-class>CaptchaServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>CaptchaServlet</servlet-name>
@@ -114,7 +90,7 @@ dependencies {
 <img src="/images/captcha" />
 ```
 
-### 3.2.在SpringMVC中使用
+### 4.2.在SpringMVC中使用
 也可以使用controller的形式输出验证码，方法如下：
 ```java
 @Controller
@@ -131,7 +107,7 @@ public class MainController {
 <img src="/images/captcha" />
 ```
 
-### 3.3.判断验证码是否正确
+### 4.3.判断验证码是否正确
 
 ```java
 @Controller
@@ -148,7 +124,7 @@ public class LoginController {
 }
 ```
 
-### 3.4.设置宽高和位数
+### 4.4.设置宽高和位数
 ```java
 @Controller
 public class MainController {
@@ -164,7 +140,7 @@ public class MainController {
 }
 ```
 
-### 3.5.不使用工具类
+### 4.5.不使用工具类
 
 &emsp;&emsp;CaptchaUtil是为了简化操作，封装了生成验证码、存session、判断验证码等功能。CaptchaUtil使用的GifCaptcha
 生成的字母数字混合的gif验证码，如果需要设置更多的参数，请参照如下操作使用：
@@ -206,9 +182,9 @@ public class MainController {
 }
 ```
 
-## 4.更多设置
+## 5.更多设置
 
-### 4.1.使用Gif验证码
+### 5.1.使用Gif验证码
 
 ```java
 public class Test {
@@ -234,7 +210,7 @@ public class Test {
 }
 ```
 
-### 4.2.使用png验证码
+### 5.2.使用png验证码
 
 ```java
 public class Test {
@@ -260,7 +236,7 @@ public class Test {
 }
 ```
 
-### 4.3.验证码类型
+### 5.3.验证码类型
 
  类型 | 描述 
  :--- | :--- 
@@ -272,7 +248,7 @@ public class Test {
  TYPE_NUM_AND_UPPER | 数字和大写字母
 
 
-### 4.4.中文验证码
+### 5.4.中文验证码
 
 中文png验证码：
 
@@ -320,11 +296,8 @@ public class Test {
 }
 ```
 
-### 4.5.前后端分离项目的使用
+### 5.5.前后端分离项目的使用
 
 &emsp;&emsp;分离项目建议不要存储在session中，存储在redis中。
 
 
-## 5.自定义效果
-
-参考源代码中的SpecCaptcha和GifCaptcha继承Captcha即可。

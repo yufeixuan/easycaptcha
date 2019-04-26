@@ -1,4 +1,4 @@
-package com.wf.captcha;
+package com.yufeixuan.captcha;
 
 /**
  *

@@ -1,4 +1,4 @@
-package com.wf.captcha.servlet;
+package com.yufeixuan.captcha.servlet;
 
 import java.io.IOException;
 
@@ -7,11 +7,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.wf.captcha.utils.CaptchaUtil;
+import com.yufeixuan.captcha.utils.CaptchaUtil;
 
 /**
  * 验证码servlet
- * Created by 王帆 on 2018-07-27 上午 10:08.
+ * Created by phoenix on 2019-04-26 上午 10:08.
  */
 public class CaptchaServlet extends HttpServlet {
     private static final long serialVersionUID = -90304944339413093L;

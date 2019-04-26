@@ -1,10 +1,10 @@
-package com.wf.captcha;
+package com.yufeixuan.captcha;
 
 import java.util.Random;
 
 /**
  * 随机数工具类
- * Created by 王帆 on 2018-07-27 上午 10:08.
+ * Created by phoenix on 2019-04-26 上午 10:08.
  */
 public class Randoms {
     protected static final Random RANDOM = new Random();

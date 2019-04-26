@@ -1,4 +1,4 @@
-package com.wf.captcha.utils;
+package com.yufeixuan.captcha.utils;
 
 import java.awt.*;
 import java.io.IOException;
@@ -6,13 +6,13 @@ import java.io.IOException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.wf.captcha.Captcha;
-import com.wf.captcha.GifCaptcha;
-import com.wf.captcha.SpecCaptcha;
+import com.yufeixuan.captcha.Captcha;
+import com.yufeixuan.captcha.GifCaptcha;
+import com.yufeixuan.captcha.SpecCaptcha;
 
 /**
  * 图形验证码工具类
- * Created by 王帆 on 2018-07-27 上午 10:08.
+ * Created by phoenix on 2019-04-26 上午 10:08.
  */
 public class CaptchaUtil {
     private static final String SESSION_KEY = "captcha";
@@ -186,7 +186,7 @@ public class CaptchaUtil {
      */
     private static void outCaptcha(int width, int height, int len, Font font, int cType, HttpServletRequest request, HttpServletResponse response)
             throws IOException {
-        setHeader(response);
+        setHeader(response, cType);
         Captcha captcha = null;
         if (cType == 0) {
             captcha = new SpecCaptcha(width, height, len);
@@ -214,8 +214,13 @@ public class CaptchaUtil {
      *
      * @param response HttpServletResponse
      */
-    public static void setHeader(HttpServletResponse response) {
-        response.setContentType("image/gif");
+    public static void setHeader(HttpServletResponse response, int type) {
+        if (type == 0){
+            response.setContentType("image/png");
+        }
+        else{
+            response.setContentType("image/gif");
+        }
         response.setHeader("Pragma", "No-cache");
         response.setHeader("Cache-Control", "no-cache");
         response.setDateHeader("Expires", 0);
