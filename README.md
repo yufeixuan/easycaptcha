@@ -48,20 +48,13 @@
 ### 3.1.maven方式引入
 在你的pom.xml中添加如下代码：
 ```xml
-<project>
-    <dependencies>
-       <dependency>
-          <groupId>com.yufeixuan</groupId>
-          <artifactId>easy-captcha</artifactId>
-          <version>1.5.1</version>
-       </dependency>
-    </dependencies>
-</project>
+<dependency>
+  <groupId>io.github.yufeixuan</groupId>
+  <artifactId>easy-captcha</artifactId>
+  <version>1.5.1</version>
+</dependency>
 
 ```
-
-### 3.2.jar包下载
-[easy-captcha-1.5.1-RELEASE.jar](自行编译)
 
 
 ---
