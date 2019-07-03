@@ -5,10 +5,7 @@ import org.junit.Test;
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
+import java.io.*;
 import java.util.Random;
 
 /**
@@ -51,6 +48,20 @@ public class CaptchaTest {
 
     @Test
     public void testGifHan() throws Exception {
+        String base64;
+        ByteArrayOutputStream stream = new ByteArrayOutputStream();
+//        GifCaptcha captcha = new GifCaptcha();
+//        String base64 = captcha.base64(stream);
+
+//        ChineseCaptcha chineseCaptcha = new ChineseCaptcha();
+//        base64 = chineseCaptcha.base64(stream);
+//        ChineseGifCaptcha chineseGifCaptcha = new ChineseGifCaptcha();
+//        base64 = chineseGifCaptcha.base64(stream);
+
+        SpecCaptcha specCaptcha = new SpecCaptcha();
+        base64 = specCaptcha.base64(stream);
+
+        System.out.println(base64);
         /*for (int i = 0; i < 5; i++) {
             ChineseGifCaptcha chineseGifCaptcha = new ChineseGifCaptcha();
             System.out.println(chineseGifCaptcha.text());
@@ -75,7 +86,7 @@ public class CaptchaTest {
         String code = specCaptcha.text();
 
         // 输出图片流
-        specCaptcha.out(new FileOutputStream(new File("/Users/pro/Documents/a/aa1.png")));
+        specCaptcha.out(new FileOutputStream(new File("D:/aa1.png")));
     }
 
     @Test
@@ -111,7 +122,7 @@ public class CaptchaTest {
         g2d.dispose();
 
         // 保存文件
-        ImageIO.write(image, "png", new File("/Users/pro/Documents/a/test.png"));
+        ImageIO.write(image, "png", new File("D:/test.png"));
 
     }
 
