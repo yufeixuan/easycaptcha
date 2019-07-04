@@ -86,7 +86,7 @@ public class CaptchaTest {
         String code = specCaptcha.text();
 
         // 输出图片流
-        specCaptcha.out(new FileOutputStream(new File("D:/aa1.png")));
+        specCaptcha.out(new FileOutputStream(new File("/Users/pro/Documents/a/aa1.png")));
     }
 
     @Test
@@ -122,7 +122,7 @@ public class CaptchaTest {
         g2d.dispose();
 
         // 保存文件
-        ImageIO.write(image, "png", new File("D:/test.png"));
+        ImageIO.write(image, "png", new File("/Users/pro/Documents/a/test.png"));
 
     }
 

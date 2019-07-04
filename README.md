@@ -6,7 +6,7 @@
 
 ## 1.简介
 
-&emsp;&emsp;Java图形验证码，支持gif验证码、中文验证码，可用于Java Web、JavaSE项目。
+&emsp;&emsp;Java图形验证码，支持png透明验证码，支持gif验证码，支持base64验证码，中文验证码，可用于Java Web、JavaSE项目。
 
 
 ## 2.效果展示
@@ -51,7 +51,7 @@
 <dependency>
   <groupId>io.github.yufeixuan</groupId>
   <artifactId>easy-captcha</artifactId>
-  <version>1.5.1</version>
+  <version>1.5.2</version>
 </dependency>
 
 ```
@@ -288,8 +288,24 @@ public class Test {
     }
 }
 ```
+### 5.5.base64验证码
+```java
+public class Test {
+    
+    public static void main(String[] args) {
+        String base64;
+        ByteArrayOutputStream stream = new ByteArrayOutputStream();
 
-### 5.5.前后端分离项目的使用
+
+        SpecCaptcha specCaptcha = new SpecCaptcha();
+        base64 = specCaptcha.base64(stream);
+
+        System.out.println(base64);
+       }
+ }
+```
+
+### 5.6.前后端分离项目的使用
 
 &emsp;&emsp;分离项目建议不要存储在session中，存储在redis中。
 
