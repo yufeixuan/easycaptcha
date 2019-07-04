@@ -1,5 +1,7 @@
 package com.yufeixuan.captcha;
 
+import sun.misc.BASE64Encoder;
+
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
@@ -45,6 +47,37 @@ public class ChineseGifCaptcha extends ChineseCaptchaAbstract {
             }
             gifEncoder.finish();
             ok = true;
+        } finally {
+            try {
+                os.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return ok;
+    }
+
+    @Override
+    public String base64(OutputStream os) {
+        checkAlpha();
+        String ok;
+        try {
+            char[] rands = textChar();  // 获取验证码数组
+            GifEncoder gifEncoder = new GifEncoder();
+            gifEncoder.start(os);
+            gifEncoder.setQuality(180);
+            gifEncoder.setDelay(100);
+            gifEncoder.setRepeat(0);
+            BufferedImage frame;
+            Color fontcolor = color();
+            for (int i = 0; i < len; i++) {
+                frame = graphicsImage(fontcolor, rands, i);
+                gifEncoder.addFrame(frame);
+                frame.flush();
+            }
+            byte[] byteArray = gifEncoder.getFrameByteArray();
+            BASE64Encoder encode = new BASE64Encoder();
+            ok = encode.encode(byteArray);
         } finally {
             try {
                 os.close();

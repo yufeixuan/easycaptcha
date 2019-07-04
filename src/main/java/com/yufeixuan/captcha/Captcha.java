@@ -1,6 +1,7 @@
 package com.yufeixuan.captcha;
 
 import java.awt.*;
+import java.io.ByteArrayOutputStream;
 import java.io.OutputStream;
 
 /**
@@ -90,6 +91,14 @@ public abstract class Captcha extends Randoms {
      * @return 是否成功
      */
     public abstract boolean out(OutputStream os);
+
+    /**
+     * 验证码输出,抽象方法，由子类实现
+     *
+     * @param os 输出流
+     * @return base64
+     */
+    public abstract String base64(OutputStream os);
 
     /**
      * 获取当前的验证码

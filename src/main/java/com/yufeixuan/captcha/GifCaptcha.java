@@ -1,7 +1,11 @@
 package com.yufeixuan.captcha;
 
+import sun.misc.BASE64Encoder;
+
+import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 
@@ -41,7 +45,7 @@ public class GifCaptcha extends Captcha {
             gifEncoder.setDelay(100);
             gifEncoder.setRepeat(0);
             BufferedImage frame;
-            Color fontcolor[] = new Color[len];
+            Color[] fontcolor = new Color[len];
             for (int i = 0; i < len; i++) {
                 fontcolor[i] = new Color(20 + num(110), 20 + num(110), 20 + num(110));
             }
@@ -52,6 +56,40 @@ public class GifCaptcha extends Captcha {
             }
             gifEncoder.finish();
             ok = true;
+        } finally {
+            try {
+                os.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return ok;
+    }
+
+    @Override
+    public String base64(OutputStream os) {
+        checkAlpha();
+        String ok;
+        try {
+            char[] rands = textChar();  // 获取验证码数组
+            GifEncoder gifEncoder = new GifEncoder();
+            gifEncoder.start(os);
+            gifEncoder.setQuality(180);
+            gifEncoder.setDelay(100);
+            gifEncoder.setRepeat(0);
+            BufferedImage frame;
+            Color[] fontcolor = new Color[len];
+            for (int i = 0; i < len; i++) {
+                fontcolor[i] = new Color(20 + num(110), 20 + num(110), 20 + num(110));
+            }
+            for (int i = 0; i < len; i++) {
+                frame = graphicsImage(fontcolor, rands, i);
+                gifEncoder.addFrame(frame);
+                frame.flush();
+            }
+            byte[] byteArray = gifEncoder.getFrameByteArray();
+            BASE64Encoder encode = new BASE64Encoder();
+            ok = encode.encode(byteArray);
         } finally {
             try {
                 os.close();
