@@ -1,6 +1,6 @@
 # EasyCaptcha
 
-![JitPack](https://img.shields.io/jitpack/v/whvcse/EasyCaptcha.svg?style=flat-square)
+![JitPack](1.5.3)
 ![Hex.pm](https://img.shields.io/hexpm/l/plug.svg?style=flat-square)
 
 
