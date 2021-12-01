@@ -145,7 +145,7 @@ public class MainController {
     @RequestMapping("/images/captcha")
     public void captcha(HttpServletRequest request, HttpServletResponse response) throws Exception {
         // 设置请求头为输出图片类型
-        CaptchaUtil.setHeader(response);
+        CaptchaUtil.setHeader(response, 0);
         
         // 三个参数分别为宽、高、位数
         GifCaptcha gifCaptcha = new GifCaptcha(130, 48, 5);
