@@ -227,6 +227,21 @@ public class Test {
         specCaptcha.out(outputStream);
     }
 }
+
+
+@RequestMapping("/getcode")
+public void captcha(HttpServletRequest request, HttpServletResponse response) throws IOException {
+
+  // 设置请求头为输出图片类型png
+  CaptchaUtil.setHeader(response, 0);
+  SpecCaptcha specCaptcha = new SpecCaptcha(85, 45, 4);
+  // 设置类型，纯数字、纯字母、字母数字混合
+  specCaptcha.setCharType(Captcha.TYPE_DEFAULT);
+  request.getSession().setAttribute("captcha", specCaptcha.text().toLowerCase());
+  // 输出图片流
+  specCaptcha.out(response.getOutputStream());
+  
+}
 ```
 
 ### 5.3.验证码类型
