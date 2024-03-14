@@ -1,13 +1,11 @@
 package com.yufeixuan.captcha;
 
-import sun.misc.BASE64Encoder;
 
-import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
-import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.util.Base64;
 
 /**
  * Gif验证码类
@@ -88,8 +86,8 @@ public class GifCaptcha extends Captcha {
                 frame.flush();
             }
             byte[] byteArray = gifEncoder.getFrameByteArray();
-            BASE64Encoder encode = new BASE64Encoder();
-            ok = encode.encode(byteArray);
+            byte[] encode = Base64.getEncoder().encode(byteArray);
+            ok = new String(encode);
         } finally {
             try {
                 os.close();

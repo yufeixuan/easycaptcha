@@ -26,11 +26,11 @@ public class CaptchaTest {
 
     @Test
     public void testGIf() throws Exception {
-        /*for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 5; i++) {
             GifCaptcha gifCaptcha = new GifCaptcha();
             System.out.println(gifCaptcha.text());
             gifCaptcha.out(new FileOutputStream(new File("D:/Java/aa" + i + ".gif")));
-        }*/
+        }
     }
 
     @Test
@@ -43,7 +43,7 @@ public class CaptchaTest {
 
         ChineseCaptcha chineseCaptcha = new ChineseCaptcha();
         System.out.println(chineseCaptcha.text());
-        chineseCaptcha.out(new FileOutputStream(new File("/Users/pro/Documents/a/cc.png")));
+        chineseCaptcha.out(new FileOutputStream(new File("D:/Java/cc.png")));
     }
 
     @Test

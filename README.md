@@ -1,46 +1,13 @@
 # EasyCaptcha
 
-![JitPack](1.5.3)
-![Hex.pm](https://img.shields.io/hexpm/l/plug.svg?style=flat-square)
-
 
 ## 1.简介
 
-&emsp;&emsp;Java图形验证码，支持png透明验证码，支持gif验证码，支持base64验证码，中文验证码，可用于Java Web、JavaSE项目。
-
+&emsp;&emsp;Java图形验证码，支持png透明验证码，支持gif验证码，支持base64验证码，中文验证码，可用于Java Web、JavaSE项目，
+1.5.4版本支持jdk11
 
 ## 2.效果展示
-
-**gif效果：**
-
-![验证码](https://ws1.sinaimg.cn/large/006a7GCKly1ftpd30vgc2g303m01c0st.jpg) 
-&emsp;&emsp;
-![验证码](https://ws1.sinaimg.cn/large/006a7GCKly1ftpd22ixh9g303m01c3yj.jpg)
-&emsp;&emsp;
-![验证码](https://ws1.sinaimg.cn/large/006a7GCKly1ftpd2k0gjug303m01ct8t.jpg)
-
-**png效果：**
-
-![验证码](https://ws1.sinaimg.cn/large/006a7GCKly1ftpd09lqpaj303m01cwee.jpg)
-&emsp;&emsp;
-![验证码](https://ws1.sinaimg.cn/large/006a7GCKly1ftpd0tj6nhj303m01ct8m.jpg)
-&emsp;&emsp;
-![验证码](https://ws1.sinaimg.cn/large/006a7GCKly1ftpd1cw3pcj303m01c0sn.jpg)
-
-
-**中文验证码：**
-
-![验证码](https://ws1.sinaimg.cn/large/006a7GCKly1ftovnvbgx6g303m01cjrc.jpg)
-&emsp;&emsp;
-![验证码](https://ws1.sinaimg.cn/large/006a7GCKly1ftovojp2gng303m01cq2w.jpg)
-&emsp;&emsp;
-![验证码](https://ws1.sinaimg.cn/large/006a7GCKly1ftovp5u4c4g303m01cdft.jpg)
-
-![验证码](https://ws1.sinaimg.cn/large/006a7GCKly1ftovmfxg71j303m01cq2s.jpg)
-&emsp;&emsp;
-![验证码](https://ws1.sinaimg.cn/large/006a7GCKly1ftovmy720dj303m01cq2s.jpg)
-&emsp;&emsp;
-![验证码](https://ws1.sinaimg.cn/large/006a7GCKly1ftovn68um6j303m01cglf.jpg)
+无
 
 
 
@@ -51,7 +18,7 @@
 <dependency>
   <groupId>io.github.yufeixuan</groupId>
   <artifactId>easy-captcha</artifactId>
-  <version>1.5.2</version>
+  <version>1.5.4</version>
 </dependency>
 
 ```
@@ -73,7 +40,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>CaptchaServlet</servlet-name>
-        <url-pattern>/images/captcha</url-pattern>
+        <url-pattern>/images/captcha</url-pattern>
     </servlet-mapping>
 </web-app>
 

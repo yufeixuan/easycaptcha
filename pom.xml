@@ -5,11 +5,11 @@
     <groupId>io.github.yufeixuan</groupId>
 
     <artifactId>easy-captcha</artifactId>
-    <version>1.5.1-RELEASE</version>
+    <version>1.5.4</version>
     <packaging>jar</packaging>
 
     <name>EasyCaptcha</name>
-    <description>Java图形验证码，支持gif验证码、中文验证码，适用于Java Web、JavaSE项目。</description>
+    <description>Java图形验证码，支持gif验证码、中文验证码，适用于Java Web、JavaSE项目，支持jdk11。</description>
     <url>https://github.com/yufeixuan/easycaptcha</url>
 
     <licenses>

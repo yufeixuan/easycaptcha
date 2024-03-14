@@ -1,13 +1,12 @@
 package com.yufeixuan.captcha;
 
-import sun.misc.BASE64Encoder;
-
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.util.Base64;
 
 public class ChineseCaptcha extends ChineseCaptchaAbstract {
 
@@ -178,8 +177,8 @@ public class ChineseCaptcha extends ChineseCaptchaAbstract {
             drawOval(5, g.getColor(), g);
             ImageIO.write(bi, "png", out);
             stream.flush();
-            BASE64Encoder encode = new BASE64Encoder();
-            ok = encode.encode(stream.toByteArray());
+            byte[] encode = Base64.getEncoder().encode(stream.toByteArray());
+            ok = new String(encode);
         } catch (IOException e) {
             e.printStackTrace();
         } finally {

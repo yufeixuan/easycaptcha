@@ -1,11 +1,10 @@
 package com.yufeixuan.captcha;
 
-import sun.misc.BASE64Encoder;
-
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.util.Base64;
 
 public class ChineseGifCaptcha extends ChineseCaptchaAbstract {
 
@@ -76,8 +75,8 @@ public class ChineseGifCaptcha extends ChineseCaptchaAbstract {
                 frame.flush();
             }
             byte[] byteArray = gifEncoder.getFrameByteArray();
-            BASE64Encoder encode = new BASE64Encoder();
-            ok = encode.encode(byteArray);
+            byte[] encode = Base64.getEncoder().encode(byteArray);
+            ok = new String(encode);
         } finally {
             try {
                 os.close();
