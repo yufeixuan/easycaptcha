@@ -7,8 +7,17 @@
 1.5.4版本支持jdk11
 
 ## 2.效果展示
-无
+### 2.1.jpg验证码
+![png](https://raw.githubusercontent.com/yufeixuan/easycaptcha/master/images/gif/aa0.gif)
+![png](https://raw.githubusercontent.com/yufeixuan/easycaptcha/master/images/gif/aa1.gif)
+![png](https://raw.githubusercontent.com/yufeixuan/easycaptcha/master/images/gif/aa2.gif)
+![png](https://raw.githubusercontent.com/yufeixuan/easycaptcha/master/images/gif/aa3.gif)
 
+### 2.2.base64验证码
+    data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAY
+
+### 2.3.中文验证码
+![png](https://raw.githubusercontent.com/yufeixuan/easycaptcha/master/images/zh/cc.png)
 
 
 ## 3.导入项目
